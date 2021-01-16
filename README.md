@@ -4,7 +4,7 @@
 
 # Problem statement
 
-copies a dir from s3 to s3
+copies a updates a lambda function to an s3 package
 
 # Format
 
@@ -15,20 +15,20 @@ the op uses [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgre
 ## Install
 
 ```shell
-opctl op install github.com/opspec-pkgs/aws.s3.cp-dir#1.1.0
+opctl op install github.com/opspec-pkgs/aws.lambda.update-function-code
 ```
 
 ## Run
 
 ```
-opctl run github.com/opspec-pkgs/aws.s3.cp-dir#1.1.0
+opctl run github.com/opspec-pkgs/aws.lambda.update-function-code
 ```
 
 ## Compose
 
 ```yaml
 op:
-  ref: github.com/opspec-pkgs/aws.s3.cp-dir#1.1.0
+  ref: github.com/opspec-pkgs/aws.lambda.update-function-code
   inputs:
     accessKeyId:
     dstS3Uri:
