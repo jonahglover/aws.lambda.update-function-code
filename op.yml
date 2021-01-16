@@ -1,5 +1,5 @@
 description: "updates a lambda function with a package from s3"
-name: github.com/jonahglover/aws.s3.cp-dir
+name: github.com/jonahglover/aws.lambda.update-function-code
 inputs:
   srcS3Bucket:
     string:
