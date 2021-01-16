@@ -21,7 +21,7 @@ opctl op install github.com/opspec-pkgs/aws.lambda.update-function-code
 ## Run
 
 ```
-opctl run github.com/opspec-pkgs/aws.lambda.update-function-code
+opctl run github.com/jonahglover/aws.lambda.update-function-code
 ```
 
 ## Compose
