@@ -1,14 +1,15 @@
-description: "copies a dir from s3 to s3"
-name: github.com/opspec-pkgs/aws.s3.cp-dir
+description: "updates a lambda function with a package from s3"
+name: github.com/jonahglover/aws.s3.cp-dir
 inputs:
-  srcS3Uri:
+  srcS3Bucket:
     string:
-      description: "where to copy from"
-      constraints: { format: uri }
-  dstS3Uri:
+      description: "s3 bucket that contains package code"
+  srcS3Key:
     string:
-      description: "where to copy to"
-      constraints: { format: uri }
+      description: "s3 object key"
+  dstLambdaFunctionName:
+    string:
+      description: "lambda function name"
   accessKeyId:
     string:
       constraints: { minLength: 20 }
@@ -29,9 +30,9 @@ run:
       - sh
       - -ce
       - |
-        aws s3 cp $(srcS3Uri) $(dstS3Uri) --recursive
+        aws lambda update-function-code --s3-bucket $(srcS3Bucket) --s3-key $(srcS3Key) --function-name $(dstLambdaFunctionName)
     envVars:
       AWS_ACCESS_KEY_ID: $(accessKeyId)
       AWS_SECRET_ACCESS_KEY: $(secretAccessKey)
       AWS_DEFAULT_REGION: $(region)
-    image: { ref: 'opspecpkgs/aws.s3.cp-dir:1.1.0' }
+    image: { ref: 'jonahglover/aws.lambda.update-function-code' }

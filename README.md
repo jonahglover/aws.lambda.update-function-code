@@ -4,7 +4,7 @@
 
 # Problem statement
 
-copies a updates a lambda function to an s3 package
+updates a lambda function with a package from s3
 
 # Format
 
@@ -28,7 +28,7 @@ opctl run github.com/opspec-pkgs/aws.lambda.update-function-code
 
 ```yaml
 op:
-  ref: github.com/opspec-pkgs/aws.lambda.update-function-code
+  ref: github.com/jonahglover/aws.lambda.update-function-code
   inputs:
     accessKeyId:
     dstS3Uri:
